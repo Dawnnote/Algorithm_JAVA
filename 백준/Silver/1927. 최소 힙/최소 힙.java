@@ -8,6 +8,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         PriorityQueue<Integer> heap = new PriorityQueue<>();
+        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < n; i++) {
             int x = Integer.parseInt(br.readLine());
@@ -15,10 +16,12 @@ public class Main {
             if (x == 0) {
                 // 배열이 없으면 0을 반환 그렇지 않으면, 최소값 반환
                 int min = heap.peek() == null ? 0 : heap.poll();
-                System.out.println(min);
+                sb.append(min).append("\n");
             } else {
                 heap.offer(x);
             }
         }
+
+        System.out.println(sb);
     }
 }

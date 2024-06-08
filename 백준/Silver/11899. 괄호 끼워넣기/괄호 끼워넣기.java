@@ -1,12 +1,3 @@
-/**
- * 성능 : 메모리 - 96748KB, 시간 - 576ms
- *
- * 백준 11899번: 괄호 끼워넣기
- * 난이도: 실버
- * 분류: 문자열, 스택
- *
- */
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

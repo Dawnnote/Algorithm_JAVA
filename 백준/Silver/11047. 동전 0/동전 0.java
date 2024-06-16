@@ -8,6 +8,7 @@ public class Main {
 
     static int n, k;
     static int cnt = 0;
+//    static int[] coins;
     static Stack<Integer> coins = new Stack<>();
 
     public static void main(String[] args) throws IOException {
@@ -35,10 +36,16 @@ public class Main {
         }
 
         for (int i = 0; i < n; i++) {
-            int bigNum = coins.pop();
-            if (bigNum <= k) {
-                cnt += k / bigNum;
-                k %= bigNum;
+            // 제일 큰 값은 맨 위(뒤) 요소
+            int descNum = coins.pop();
+
+            // 큰 동전(값)이 k원 보다 작거나 같을 경우
+            if (descNum <= k) {
+                // k원을 동전으로 나눈 몫 == 동전의 개수
+                cnt += k / descNum;
+                
+                // k원을 동전을 나눈 나머지 값으로
+                k %= descNum;
                 break;
             }
         }
